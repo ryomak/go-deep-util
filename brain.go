@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/patrikeh/go-deep"
 	"github.com/patrikeh/go-deep/training"
 	"github.com/ryomak/deep-learning-go/util"
 )
