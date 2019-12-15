@@ -1,4 +1,4 @@
-# go-deep-assets
+# go-deep-util
 [![GoReport](https://goreportcard.com/badge/github.com/ryomak/go-deep-assets)](https://goreportcard.com/report/github.com/ryomak/go-deep-assets)  
 
 go-deep-util is utility for [github.com/patrikeh/go-deep](https://github.com/patrikeh/go-deep)
