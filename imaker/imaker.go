@@ -12,7 +12,7 @@ import (
 	"github.com/muesli/smartcrop"
 	"github.com/muesli/smartcrop/nfnt"
 	"github.com/nfnt/resize"
-	"github.com/ryomak/deep-learning-go/util"
+	"github.com/ryomak/go-deep-assets/util"
 )
 
 type ImageMakerUtil struct {
