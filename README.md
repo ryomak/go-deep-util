@@ -1,5 +1,7 @@
 # go-deep-assets
-go-deep-assets is assets for github.com/patrikeh/go-deep
+[![GoReport](https://goreportcard.com/badge/github.com/ryomak/go-deep-assets)](https://goreportcard.com/report/github.com/ryomak/go-deep-assets)
+go-deep-assets is assets for [github.com/patrikeh/go-deep](https://github.com/patrikeh/go-deep)
+
 ## install
 ```
 $ go get https://github.com/ryomak/go-deep-assets
