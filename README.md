@@ -1,10 +1,24 @@
-# deep-learning-go
-go-deep-util is utility for github.com/patrikeh/go-deep
+# go-deep-assets
+[![GoReport](https://goreportcard.com/badge/github.com/ryomak/go-deep-assets)](https://goreportcard.com/report/github.com/ryomak/go-deep-assets)  
+
+go-deep-util is utility for [github.com/patrikeh/go-deep](https://github.com/patrikeh/go-deep)
 ## install
 ```
 $ go get https://github.com/ryomak/go-deep-util
 ```
 ## example
+### directory
+
+```
+.
+├── dataset
+│   ├── lulu
+│   ├── tida
+│   └── yuna
+├── input.jpg
+└── main.go
+```
+lulu/tida/yuna folder -> *.png/*.jpg
 
 ### directory
 
@@ -69,7 +83,8 @@ func main() {
 	neural := deep.NewNeural(&deep.Config{
 		Inputs:     len(data[0].Input),
 		Layout:     append([]int{1000, 100}, len(data[0].Response)),
-		Activation: deep.ActivationSoftmax, Mode:       deep.ModeMultiClass,
+		Activation: deep.ActivationSoftmax,
+		Mode:       deep.ModeMultiClass,
 		Weight:     deep.NewNormal(1, 0),
 		Bias:       true,
 	})
@@ -78,7 +93,7 @@ func main() {
 	loading.Start()
 	trainer := training.NewBatchTrainer(training.NewAdam(0.001, 0, 0, 0), 40, len(ex)/2, 12)
 	training, heldout := ex.Split(0.8)
-	trainer.Train(neural, training, heldout, 60)
+	trainer.Train(neural, training, heldout, 100)
 	loading.Stop()
 
 	inputFile := "input.jpg"
