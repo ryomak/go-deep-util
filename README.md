@@ -16,7 +16,7 @@ $ go get https://github.com/ryomak/go-deep-assets
 │   ├── lulu
 │   ├── tida
 │   └── yuna
-├── input.jpeg
+├── input.jpg
 └── main.go
 ```
 lulu/tida/yuna folder -> *.png/*.jpg
@@ -79,7 +79,7 @@ func main() {
 	loading.Start()
 	trainer := training.NewBatchTrainer(training.NewAdam(0.001, 0, 0, 0), 40, len(ex)/2, 12)
 	training, heldout := ex.Split(0.8)
-	trainer.Train(neural, training, heldout, 60)
+	trainer.Train(neural, training, heldout, 100)
 	loading.Stop()
 
 	inputFile := "input.jpg"
