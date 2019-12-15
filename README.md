@@ -1,4 +1,4 @@
-# deep-learning-go
+# go-deep-assets
 go-deep-assets is assets for github.com/patrikeh/go-deep
 ## install
 ```
