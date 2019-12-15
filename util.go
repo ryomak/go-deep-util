@@ -7,6 +7,13 @@ import (
 	"github.com/patrikeh/go-deep/training"
 )
 
+// IBrainUtil is interface of making assets for go-deep
+type IBrainUtil interface {
+	Decode(string) ([]float64, error)
+	Encode([]float64) (interface{}, error)
+	MakePattern() ([]DataSet, error)
+}
+
 type DataSet training.Example
 type DataSets training.Examples
 
