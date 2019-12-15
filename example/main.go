@@ -1,13 +1,3 @@
-# deep-learning-go
-go-deep-assets is assets for github.com/patrikeh/go-deep
-## install
-```
-$ go get https://github.com/ryomak/go-deep-assets
-```
-## example
-
-```go
-
 package main
 
 import (
@@ -55,7 +45,8 @@ func main() {
 	neural := deep.NewNeural(&deep.Config{
 		Inputs:     len(data[0].Input),
 		Layout:     append([]int{1000, 100}, len(data[0].Response)),
-		Activation: deep.ActivationSoftmax, Mode:       deep.ModeMultiClass,
+		Activation: deep.ActivationSoftmax,
+		Mode:       deep.ModeMultiClass,
 		Weight:     deep.NewNormal(1, 0),
 		Bias:       true,
 	})
@@ -93,7 +84,3 @@ func doTest(neural *deep.Neural, ex training.Examples, i assets.IBrainUtil) {
 	}
 	fmt.Printf("[Test Result]\ncorrect:%v, sum:%v  %0.1f％\n", correct, sum, 100*correct/sum)
 }
-
-```
-## LICENSE
-MIT
