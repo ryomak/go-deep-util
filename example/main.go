@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 
 	"github.com/briandowns/spinner"
 	deep "github.com/patrikeh/go-deep"
 	"github.com/patrikeh/go-deep/training"
-	iclass "github.com/ryomak/go-deep-util/iclassifier"
 	util "github.com/ryomak/go-deep-util"
+	iclass "github.com/ryomak/go-deep-util/iclassifier"
 )
 
 func main() {
@@ -35,6 +36,11 @@ func main() {
 	data, err := i.MakePattern()
 	if err != nil {
 		panic(err)
+	}
+
+	if len(data) == 0 {
+		fmt.Println("no data")
+		os.Exit(1)
 	}
 
 	//shuffle

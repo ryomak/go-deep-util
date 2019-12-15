@@ -29,13 +29,14 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 
 	"github.com/briandowns/spinner"
 	deep "github.com/patrikeh/go-deep"
 	"github.com/patrikeh/go-deep/training"
+	util "github.com/ryomak/go-deep-util"
 	iclass "github.com/ryomak/go-deep-util/iclassifier"
-	"github.com/ryomak/go-deep-util"
 )
 
 func main() {
@@ -63,6 +64,11 @@ func main() {
 		panic(err)
 	}
 
+	if len(data) == 0 {
+		fmt.Println("no data")
+		os.Exit(1)
+	}
+
 	//shuffle
 	ex := training.Examples(util.DatsetToDataSets(data))
 	ex.Shuffle()
@@ -80,7 +86,7 @@ func main() {
 	loading.Start()
 	trainer := training.NewBatchTrainer(training.NewAdam(0.001, 0, 0, 0), 40, len(ex)/2, 12)
 	training, heldout := ex.Split(0.8)
-	trainer.Train(neural, training, heldout, 100)
+	trainer.Train(neural, training, heldout, 60)
 	loading.Stop()
 
 	inputFile := "input.jpg"
