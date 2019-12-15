@@ -1,11 +1,10 @@
 # go-deep-assets
 [![GoReport](https://goreportcard.com/badge/github.com/ryomak/go-deep-assets)](https://goreportcard.com/report/github.com/ryomak/go-deep-assets)  
 
-go-deep-assets is assets for [github.com/patrikeh/go-deep](https://github.com/patrikeh/go-deep)
-
+go-deep-util is utility for [github.com/patrikeh/go-deep](https://github.com/patrikeh/go-deep)
 ## install
 ```
-$ go get https://github.com/ryomak/go-deep-assets
+$ go get https://github.com/ryomak/go-deep-util
 ```
 ## example
 ### directory
@@ -21,6 +20,21 @@ $ go get https://github.com/ryomak/go-deep-assets
 ```
 lulu/tida/yuna folder -> *.png/*.jpg
 
+### directory
+
+```
+.
+├── dataset
+│   ├── lulu
+│   ├── tida
+│   └── yuna
+├── input.jpg
+└── main.go
+```
+lulu/tida/yuna folder -> *.png/*.jpg
+
+### code
+
 ```go
 
 package main
@@ -33,9 +47,8 @@ import (
 	"github.com/briandowns/spinner"
 	deep "github.com/patrikeh/go-deep"
 	"github.com/patrikeh/go-deep/training"
-	assets "github.com/ryomak/go-deep-assets"
-	iclass "github.com/ryomak/go-deep-assets/iclassifier"
-	util "github.com/ryomak/go-deep-assets/util"
+	iclass "github.com/ryomak/go-deep-util/iclassifier"
+	"github.com/ryomak/go-deep-util"
 )
 
 func main() {
@@ -48,7 +61,7 @@ func main() {
 		"lulu",
 	}
 
-	var i assets.IBrainUtil
+	var i util.IBrainUtil
 
 	i = iclass.Init(
 		labels,
@@ -92,7 +105,7 @@ func main() {
 	doTest(neural, ex, i)
 }
 
-func doTest(neural *deep.Neural, ex training.Examples, i assets.IBrainUtil) {
+func doTest(neural *deep.Neural, ex training.Examples, i util.IBrainUtil) {
 
 	fmt.Println("Test start with learned Model")
 	sum := float64(len(ex))
