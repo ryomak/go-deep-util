@@ -8,6 +8,18 @@ go-deep-assets is assets for [github.com/patrikeh/go-deep](https://github.com/pa
 $ go get https://github.com/ryomak/go-deep-assets
 ```
 ## example
+### directory
+
+```
+.
+├── dataset
+│   ├── lulu
+│   ├── tida
+│   └── yuna
+├── input.jpeg
+└── main.go
+```
+lulu/tida/yuna folder -> *.png/*.jpg
 
 ```go
 
