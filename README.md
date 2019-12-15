@@ -20,19 +20,6 @@ $ go get https://github.com/ryomak/go-deep-util
 ```
 lulu/tida/yuna folder -> *.png/*.jpg
 
-### directory
-
-```
-.
-├── dataset
-│   ├── lulu
-│   ├── tida
-│   └── yuna
-├── input.jpg
-└── main.go
-```
-lulu/tida/yuna folder -> *.png/*.jpg
-
 ### code
 
 ```go
