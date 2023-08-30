@@ -7,5 +7,5 @@ require (
 	github.com/muesli/smartcrop v0.3.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/patrikeh/go-deep v0.0.0-20191210195838-b811ffc4083e
-	golang.org/x/image v0.0.0-20191214001246-9130b4cfad52 // indirect
+	golang.org/x/image v0.5.0 // indirect
 )
